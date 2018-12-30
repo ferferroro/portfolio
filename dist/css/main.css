@@ -164,11 +164,14 @@ main {
   grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
   grid-template-column: repeat(3, 1fr);
   grid-gap: 30px; }
-  .about-info .bio-image {
+  .about-info .about-image .portrait {
     grid-area: bioimage;
     margin: auto;
     width: 200px;
     height: 200px;
+    background: url(../img/portrait.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 50%;
     border: solid 3px #eece1a; }
   .about-info .bio {
@@ -182,7 +185,7 @@ main {
     grid-area: job3; }
   .about-info .job {
     background: #515151;
-    padding: 0.5rem;
+    padding: 1rem;
     border-bottom: #eece1a 5px solid; }
 
 .projects {
@@ -198,19 +201,16 @@ main {
       transition: all 0.5s ease-out; }
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 1rem; }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.7rem; }
   .boxes div {
-    font-size: 2rem;
+    width: 100%;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
-      padding: 0.5rem 1.5rem;
       background: #eece1a;
       color: #000; }
       .boxes div:hover span {
@@ -246,7 +246,9 @@ main {
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .boxes {
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 768px) {
   main {
@@ -275,7 +277,9 @@ main {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  .boxes {
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main {
@@ -286,9 +290,14 @@ main {
       margin-top: 1rem;
       font-size: 5rem; }
   .projects {
+    grid-template-columns: 1fr; }
+  .boxes {
     grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 320px) {
   main .lg-heading {
     margin-top: 1rem;
-    font-size: 3rem; } }
+    font-size: 3rem; }
+  .boxes {
+    grid-template-columns: 1fr;
+    font-size: 1rem; } }
