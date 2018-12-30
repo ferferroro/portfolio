@@ -281,4 +281,6 @@ main {
   main#home h1 {
     margin-top: 10vh; }
   .projects {
-    grid-template-columns: 1fr; } }
+    grid-template-columns: 1fr; }
+  main h1.lg-heading {
+    font-size: 4rem; } }
