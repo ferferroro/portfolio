@@ -13,8 +13,6 @@ menuBtn.addEventListener('click', toggleMenu);
 
 function toggleMenu() {
 
-	showMenu = !showMenu;
-
 	if(!showMenu) {
 		menuBtn.classList.add('close');
 		menu.classList.add('close');
@@ -29,4 +27,6 @@ function toggleMenu() {
 		menuBranding.classList.remove('show');
 		navItems.forEach(item => item.classList.remove('show'))
 	}
+
+	showMenu = !showMenu;
 }
